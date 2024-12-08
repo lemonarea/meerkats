@@ -14,7 +14,7 @@ engine = create_engine(connection_string, echo=True)
 def app_menu():
     with st.sidebar:
         with st.expander("☰ Navigator", expanded=False):
-            st.page_link("app.py", label="🏠︎ Home")
+            st.page_link("streamlit_app.py", label="🏠︎ Home")
             st.page_link("pages/notebook.py", label="🗒 INB", disabled=True)
             st.page_link("pages/chat.py", label="🗣 Chat", disabled=True)
             st.page_link("pages/kpis.py", label="〽 KPIs", disabled=True)
