@@ -1,0 +1,50 @@
+CREATE TABLE `users` (
+  `UserCode` int NOT NULL,
+  `Password` text NOT NULL,
+  `UserName` varchar(225) NOT NULL,
+  PRIMARY KEY (`UserCode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `groups` (
+  `GroupCode` int NOT NULL AUTO_INCREMENT,
+  `GroupName` varchar(225) NOT NULL,
+  PRIMARY KEY (`GroupCode`),
+  UNIQUE KEY `GroupName` (`GroupName`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `sections` (
+  `SectionCode` int NOT NULL AUTO_INCREMENT,
+  `SectionName` varchar(225) NOT NULL,
+  PRIMARY KEY (`SectionCode`),
+  UNIQUE KEY `SectionName` (`SectionName`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `pages` (
+  `PageCode` int NOT NULL AUTO_INCREMENT,
+  `PageName` varchar(225) NOT NULL,
+  `PageRef` varchar(225) NOT NULL,
+  PRIMARY KEY (`PageCode`,`PageRef`),
+  UNIQUE KEY `PageRef_UNIQUE` (`PageRef`),
+  UNIQUE KEY `PageName_UNIQUE` (`PageName`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `access_control` (
+  `UserCode` int NOT NULL,
+  `GroupCode` int DEFAULT NULL,
+  `SectionCode` int DEFAULT NULL,
+  `PageRef` varchar(225) DEFAULT NULL,
+  KEY `UserCode` (`UserCode`),
+  KEY `GroupCode` (`GroupCode`),
+  KEY `SectionCode` (`SectionCode`),
+  KEY `PageRef` (`PageRef`),
+  CONSTRAINT `access_control_ibfk_1` FOREIGN KEY (`UserCode`) REFERENCES `users` (`UserCode`),
+  CONSTRAINT `access_control_ibfk_2` FOREIGN KEY (`GroupCode`) REFERENCES `groups` (`GroupCode`),
+  CONSTRAINT `access_control_ibfk_3` FOREIGN KEY (`SectionCode`) REFERENCES `sections` (`SectionCode`),
+  CONSTRAINT `access_control_ibfk_4` FOREIGN KEY (`PageRef`) REFERENCES `pages` (`PageRef`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+
+
+
+

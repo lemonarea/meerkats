@@ -1,0 +1,37 @@
+
+## Add new page report, model, dashboard
+
+Example : Reports
+
+Step 1
+create report in based on department -> for example this is report path for sales department (pages.reports.R_S file)
+report name has a unique code like R_S00001 -> R for report, S for sales, 00001 for the first report
+inside R_S file, will programing the code to generate the report and user permission to access the report
+
+Step 2 
+add the report name and report code to pagename table in the database
+
+Step 3
+make sure the permission to access the report only for the department user, group user, and super admin
+
+############################################################################################################################################################
+## Add new department 
+
+
+
+
+############################################################################################################################################################
+## Add new user and his department, add group user, add pages to the group user 
+
+
+
+
+
+
+
+
+
+
+
+
+
