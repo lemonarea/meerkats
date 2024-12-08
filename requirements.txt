@@ -5,4 +5,4 @@ joblib
 pymysql
 openai
 openpyxl
-
+matplotlib
