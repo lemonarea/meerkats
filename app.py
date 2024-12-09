@@ -21,6 +21,14 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+hide_st_style= """
+<style>
+#MainMenu {visability: hidden;}
+footer {visability: hidden;}
+header {visability: hidden;}
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 # Create a connection string for the MySQL database
 connection_string = f"mysql+pymysql://{username}:{password}@{host}:{port}/{database}"
 
