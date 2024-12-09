@@ -23,9 +23,8 @@ st.set_page_config(
 
 hide_st_style= """
 <style>
-#MainMenu {visability: hidden;}
-footer {visability: hidden;}
-header {visability: hidden;}
+.stAppToolbar .st-emotion-cache-15ecox0 .ezrtsby0
+{visability: hidden;}
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
