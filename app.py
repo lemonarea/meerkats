@@ -21,13 +21,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-hide_st_style= """
-<style>
-.stAppToolbar .st-emotion-cache-15ecox0 .ezrtsby0
-{visability: hidden;}
-</style>
-"""
-st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 # Create a connection string for the MySQL database
 connection_string = f"mysql+pymysql://{username}:{password}@{host}:{port}/{database}"
